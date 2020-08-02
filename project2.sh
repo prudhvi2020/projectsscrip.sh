@@ -14,7 +14,7 @@ read -p "on which day book rented:" day_book_rented
 read -p "How many days u Kept" days_rented
 h=$(date +%H)
 if [ $h -ge 21 ];then
-days_rented=$[days_rented+1]
+let days_rented++
 fi
 if [ $day_book_rented = "sunday" ];then
 cost=$(echo "$cost_per_day * $days_rented * 0.5" | bc)   
