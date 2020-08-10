@@ -9,9 +9,7 @@ echo "TIME=$(date +%H:%M:%S)"  >> sys.txt
 for SERVER in $(cat servers.txt)
 do
 # Open a socket and send a char
-    echo "-" | nc -w $TIMEOUT $SERVER $PORT &> /dev/null
-
- # Check exit code of NC
+ echo "-" | nc -w $TIMEOUT $SERVER $PORT &> /dev/null # Check exit code of NC
 if [ $? -eq 0 ]; then
 echo "$SERVER is Available."
 # it will give the value of total freememory in server
