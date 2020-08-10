@@ -16,7 +16,7 @@ echo "$SERVER is Available."
 freememory=$(ssh $SERVER free -mt | grep -w "Total" | awk '{print $4}')
 # it will give diskspace
 diskspace=$(ssh $SERVER df -h | awk '{print $1" " $4 }'| cut -d "." -f 2)
-it will give the value of cpu usage
+#it will give the value of cpu usage
 cpu_usage=$(ssh $SERVER top -b -n 2 -d1 | grep "Cpu(s)" | tail -n1 | awk '{print $2}' | cut -d "." -f 1)
 # -n Returns true if the string is not empty
 if [ -n $CPU_LOAD ]; then
